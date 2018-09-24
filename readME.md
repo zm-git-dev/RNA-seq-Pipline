@@ -29,12 +29,12 @@ hisat2-build "filepath of reference genome" "filepath of intended prefix index f
    along with the GTF file for estimating gene feature abundance/counts. Like so:
 
    Main Folder/<br/>
-      reads/<br/>
-      refs/<br/>
-      rnaSeqPipeline.sh<br/>
-      script1.r<br/>
-      script2.r<br/>
-      readME.md<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reads/<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refs/<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rnaSeqPipeline.sh<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script1.r<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script2.r<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readME.md<br/>
 
 
 3. Your read data files should follow this naming format, in order for this pipeline to correctly work:
