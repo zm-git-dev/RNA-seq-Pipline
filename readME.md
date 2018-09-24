@@ -13,14 +13,29 @@ gene feature structure, and format results for gene-set enrichment analysis.
 6. ermineJ software for gene-set enrichment analysis (optional).
 
 ## Data used to test this pipeline
-I used RNA-seq/reference data from this [tutorial](https://github.com/griffithlab/rnaseq_tutorial/wiki/RNAseq-Data) online. The link outlines the type of data, and how the samples were designed for this particular experiment. 
+I used RNA-seq/reference data from this [tutorial](https://github.com/griffithlab/rnaseq_tutorial/wiki/RNAseq-Data) online. 
+The link outlines the type of data, and how the samples were designed for this particular experiment. Reference genome 
+data was indexed using hisat2 using this command: 
+
+```bash
+hisat2-build "filepath of reference genome" "filepath of intended prefix index files"
+```
 
 ## Instructions for running this pipeline
 1. Clone this repo into where you want it to be on your desktop/laptop.
 
 2. Move into this directory and create to new folders called "reads" and "refs". You will place your read data into the 
    reads folder, while your refs directory should contain the reference genome you want to align your RNA-seq data to, 
-   along with the GTF file for estimating gene feature abundance/counts.
+   along with the GTF file for estimating gene feature abundance/counts. Like so:
+
+   Main Folder/
+      reads/
+      refs/
+      rnaSeqPipeline.sh
+      script1.r
+      script2.r
+      readME.md
+
 
 3. Your read data files should follow this naming format, in order for this pipeline to correctly work:
 
