@@ -2,7 +2,7 @@
 
 This simple RNA-seq pipeline was written by me for self-study and exposure to NGS-data analysis. This piepleine will
 perform RNA-seq alignment for user specified read data, conduct coverage/abundance counts against a user specified
-gene feature structure. Format results for gene-set enrichment analysis.
+gene feature structure, and format results for gene-set enrichment analysis.
 
 ## Tool/software requirements for this pipeline
 1. Linux command line that uses some sort of shell (I used basic BASH).
@@ -12,18 +12,18 @@ gene feature structure. Format results for gene-set enrichment analysis.
 5. samtools for manipulating BAM files.
 6. ermineJ software for gene-set enrichment analysis (optional).
 
-## Data used to test this software
-I used RNA-seq/reference data from this tutorial online. The link outlines the type of data and how the samples were
-designed for their particular experiment. I made sure the dataset wasn't too large, in order to run and test
-the pipeline as quickly and efficiently as possible.
+## Data used to test this pipeline
+I used RNA-seq/reference data from this [tutorial](https://github.com/griffithlab/rnaseq_tutorial/wiki/RNAseq-Data) online. The link outlines the type of data, and how the samples were designed for this particular experiment. 
 
 ## Instructions for running this pipeline
-1. Clone this directory into where you want it to be on your desktop/laptop.
+1. Clone this repo into where you want it to be on your desktop/laptop.
 
-2. Move into this directory and place your data into the reads folder. Your refs directory should contain the reference
-   genome you want to align your RNA-seq data to, along with the GTF file for estimating gene feature abundance/counts.
+2. Move into this directory and create to new folders called "reads" and "refs". You will place your read data into the 
+   reads folder, while your refs directory should contain the reference genome you want to align your RNA-seq data to, 
+   along with the GTF file for estimating gene feature abundance/counts.
 
 3. Your read data files should follow this naming format, in order for this pipeline to correctly work:
+
    SAMPLENAME_REPLICATE_PAIREDENDNUMBER.fq
 
    SAMPLENAME = The name you want to give for the particular sample condition in your experiment.
@@ -35,14 +35,13 @@ the pipeline as quickly and efficiently as possible.
 
    The example data (paired end data) in this repository uses a naming convention like so:
    
-   UHR_1_R1.fq
-   UHR_1_R2.fq
-   HBR_1_R1.fq
-   HBR_1_R2.fq
-   UHR_2_R1.fq
-   UHR_2_R2.fq 
-   ...........
-   ...........
+   > UHR_1_R1.fq
+   > UHR_1_R2.fq
+   > HBR_1_R1.fq
+   > HBR_1_R2.fq
+   > UHR_2_R1.fq
+   > UHR_2_R2.fq 
+   > ...........
 
    Once you have all the data in the correct naming convention and in their proper folder locations, run this command on the 
    command line:
