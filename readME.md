@@ -1,8 +1,10 @@
 # Generalized RNA-seq pipeline for Gene Differential Expression Analysis and Gene-set Enrichment Analysis
 
-This simple RNA-seq pipeline was written by me for self-study and exposure to NGS-data analysis.
+This simple RNA-seq pipeline was written by me for self-study and exposure to NGS-data analysis. This piepleine will
+perform RNA-seq alignment for user specified read data, conduct coverage/abundance counts against a user specified
+gene feature structure. Format results for gene-set enrichment analysis.
 
-## Tool requirements for this pipeline
+## Tool/software requirements for this pipeline
 1. Linux command line that uses some sort of shell (I used basic BASH).
 2. hisat2 was used as the aligner of choice.
 3. featureCounts software was used to determine coverage/abundances in all samples
@@ -32,6 +34,7 @@ the pipeline as quickly and efficiently as possible.
    there will be only one.
 
    The example data (paired end data) in this repository uses a naming convention like so:
+   
    UHR_1_R1.fq
    UHR_1_R2.fq
    HBR_1_R1.fq
@@ -50,7 +53,8 @@ the pipeline as quickly and efficiently as possible.
 
    ```
    The program should prompt you with questions about your data/experiment, in which you should answer on the
-   command line. This should provide you with your results in several text files that you can use in further analysis
+   command line. This should provide you with your results in several text files that you can use for gene-set 
+   feature analysis.
 
 
 
