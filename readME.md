@@ -28,13 +28,13 @@ hisat2-build "filepath of reference genome" "filepath of intended prefix index f
    reads folder, while your refs directory should contain the reference genome you want to align your RNA-seq data to, 
    along with the GTF file for estimating gene feature abundance/counts. Like so:
 
-   Main Folder/
-      reads/
-      refs/
-      rnaSeqPipeline.sh
-      script1.r
-      script2.r
-      readME.md
+   Main Folder/<br/>
+      reads/<br/>
+      refs/<br/>
+      rnaSeqPipeline.sh<br/>
+      script1.r<br/>
+      script2.r<br/>
+      readME.md<br/>
 
 
 3. Your read data files should follow this naming format, in order for this pipeline to correctly work:
@@ -50,13 +50,13 @@ hisat2-build "filepath of reference genome" "filepath of intended prefix index f
 
    The example data (paired end data) in this repository uses a naming convention like so:
    
-   > UHR_1_R1.fq
-   > UHR_1_R2.fq
-   > HBR_1_R1.fq
-   > HBR_1_R2.fq
-   > UHR_2_R1.fq
-   > UHR_2_R2.fq 
-   > ...........
+   > UHR_1_R1.fq<br/>
+   > UHR_1_R2.fq<br/>
+   > HBR_1_R1.fq<br/>
+   > HBR_1_R2.fq<br/>
+   > UHR_2_R1.fq<br/>
+   > UHR_2_R2.fq<br/>
+   > ...........<br/>
 
    Once you have all the data in the correct naming convention and in their proper folder locations, run this command on the 
    command line:
