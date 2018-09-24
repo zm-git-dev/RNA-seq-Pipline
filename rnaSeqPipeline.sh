@@ -87,7 +87,7 @@ echo "*** Running DESeq1."
 cat simple_counts.txt | Rscript deseq1.r $intx$int > results.txt  2>> $RUNLOG
 
 # Create a heatmap to visually show differentially expressed genes
-cat norm_matrix-deseq1.txt | Rscript draw-heatmap.r > heatmap.pdf
+cat norm_matrix-deseq1.txt | Rscript heatmap.r > heatmap.pdf
 
 # Filter results for significantly expressed genes (p=0.05 value) for gene enrichment 
 # studies
