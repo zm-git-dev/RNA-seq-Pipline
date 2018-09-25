@@ -2,7 +2,10 @@
 
 This simple RNA-seq pipeline was written by me for self-study and exposure to NGS-data analysis. This piepleine will
 perform RNA-seq alignment for user specified read data, conduct coverage/abundance counts against a user specified
-gene feature structure, and format results for gene-set enrichment analysis.
+gene feature structure, and format results for gene-set enrichment analysis. Most NGS pipelines are created for the
+sole purpose of a particular experiment within the lab. Many efforts within the bioinformatics community have been
+trying to generalize NGS pipelines for general use, but still requires fruitful dedication. For this pipeline, I will try 
+to generalize the analysis for RNA-seq experiments as much as possible.
 
 ## Tool/software requirements for this pipeline
 1. Linux command line that uses some sort of shell (I used basic BASH).
@@ -18,8 +21,10 @@ The link outlines the type of data, and how the samples were designed for this p
 data was indexed using hisat2 using this command: 
 
 ```bash
-hisat2-build "filepath of reference genome" "filepath of intended prefix index files"
+hisat2-build *filepath of reference genome* *filepath of intended prefix index files*
 ```
+
+Note that **this pipeline is for paired-end reads**. I will add code for aligning single end reads in the future.
 
 ## Instructions for running this pipeline
 1. Clone this repo into where you want it to be on your desktop/laptop.
@@ -45,8 +50,7 @@ hisat2-build "filepath of reference genome" "filepath of intended prefix index f
 
    REPLICATE = Which particular replicate is it in your sample condition (2 vs. 3 vs 4, etc). 
 
-   PAIREDENDNUMBER = If the study used paired end replication, then you should have a read data file for each end, otherwise
-   there will be only one.
+   PAIREDENDNUMBER = If the study used paired end replication, then you should have a read data file for each paired end, otherwise there will be only one. Please name them as "R1" vs "R2".
 
    The example data (paired end data) in this repository uses a naming convention like so:
    
