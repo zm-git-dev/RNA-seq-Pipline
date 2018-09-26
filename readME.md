@@ -78,6 +78,10 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    Using the results generated from the shell script, we can now use ErmineJ to conduct over-representation analysis
    on our list of differentially expressed genes.
 
+## Pipeline Diagram
+
+   ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/Slide1.jpg?raw=true "Pipeline Diagram")
+
 ## Future Directions
 - Add QC measures
 - Add single-end read functionality
