@@ -7,17 +7,17 @@ to generalize the analysis for RNA-seq experiments as much as possible for the p
 within RNA-seq data analysis.
 
 ## Tool/software requirements for this pipeline
-1. Linux command line that uses some sort of shell (I used basic BASH).
-2. hisat2 was used as the aligner of choice.
-3. featureCounts software was used to determine coverage/abundances in all samples
+1. Linux based command line that uses some sort of shell (I used basic BASH).
+2. Hisat2 was used as the aligner of choice.
+3. FeatureCounts software was used to determine coverage/abundances in all samples.
 4. R statistical programming, along with the bioconductor package.
-5. samtools for manipulating BAM files.
-6. ermineJ software for gene-set enrichment analysis (optional).
+5. Samtools for manipulating BAM files.
+6. ErmineJ software for gene-set enrichment analysis (optional).
 
 ## Data used to test this pipeline
 I used RNA-seq/reference data from this [tutorial](https://github.com/griffithlab/rnaseq_tutorial/wiki/RNAseq-Data) online. 
 The link outlines the type of data, and how the samples were designed for this particular experiment. Reference genome 
-data was indexed using hisat2 using this command: 
+data was indexed using hisat2 with this command: 
 
 ```bash
 hisat2-build *filepath of reference genome* *filepath of intended prefix index files*

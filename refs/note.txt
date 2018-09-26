@@ -1,0 +1,1 @@
+Put reference genome/transcriptome you are aligning your read data against here. Also, put associated gtf/gene annotation files here.
