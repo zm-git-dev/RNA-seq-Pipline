@@ -1,11 +1,10 @@
 # Generalized RNA-seq pipeline for Gene Differential Expression Analysis and Gene-set Enrichment Analysis
 
-This simple RNA-seq pipeline was written by me for self-study and exposure to NGS-data analysis. This piepleine will
+This simple RNA-seq pipeline was written by me, for self-study and exposure to NGS-data analysis. This piepleine will
 perform RNA-seq alignment for user specified read data, conduct coverage/abundance counts against a user specified
-gene feature structure, and format results for gene-set enrichment analysis. Most NGS pipelines are created for the
-sole purpose of a particular experiment within the lab. Many efforts within the bioinformatics community have been
-trying to generalize NGS pipelines for general use, but still requires fruitful dedication. For this pipeline, I will try 
-to generalize the analysis for RNA-seq experiments as much as possible.
+gene feature structure, and format results for gene-set enrichment analysis. For this pipeline, I will try 
+to generalize the analysis for RNA-seq experiments as much as possible for the purpose of learning the complexities
+within RNA-seq data analysis.
 
 ## Tool/software requirements for this pipeline
 1. Linux command line that uses some sort of shell (I used basic BASH).
@@ -74,6 +73,15 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    command line. This should provide you with your results in several text files that you can use for gene-set 
    feature analysis.
 
+## Gene-set enrichment analysis/functional analysis
+   
+   Using the results generated from the shell script, we can now use ErmineJ to conduct over-representation analysis
+   on our list of differentially expressed genes.
+
+## Future Directions
+- Add QC measures
+- Add single-end read functionality
+- Improve heatmap.R script
 
 
 ## Contact Information
