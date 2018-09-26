@@ -1,10 +1,12 @@
 # This program can be run as
 #
-# cat counts.txt | Rscript deseq1.r
+# cat counts.txt | Rscript deseq.r
 #
 # and produces a table with differentially expressed genes.
 #
 # To install the requirements run the program with the 'install` parameter.
+
+
 
 
 # Read the command line arguments.
@@ -17,9 +19,9 @@ if (length(args)!=1) {
 first = args[1]
 
 if (first == 'install') {
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("DESeq")
-    stop("Installation completed", call.=FALSE)
+  source("http://bioconductor.org/biocLite.R")
+  biocLite("DESeq")
+  stop("Installation completed", call.=FALSE)
 }
 
 # Extract the experimental design from the command line.
@@ -33,8 +35,9 @@ cond2_num = as.integer(design[2])
 cond_1 = rep("cond1", cond1_num)
 cond_2 = rep("cond2", cond2_num)
 
-# Load the library.
+# Load the required libraries.
 library(DESeq)
+library(gplots)
 
 # Read the data from the file.
 counts = read.table("stdin", header=TRUE, row.names=1, sep="\t")
@@ -83,4 +86,42 @@ keep = subset(dt, id %in% diffs$id)
 
 # Save into the normalize data matrix.
 write.table(keep, file="norm-matrix-deseq1.txt", sep="\t", row.name=FALSE, col.names=TRUE, quote=FALSE)
+
+# This part of the script generates a heat map for differential expressession
+
+#data = keep
+
+gene = keep[,1]
+
+vals = as.matrix(keep[,2:ncol(keep)])
+
+# Adds a little noise to each element
+# To avoid the clusteing function failing on zero
+# variance datalines.
+vals = jitter(vals, factor = 1, amount=0.00001)
+
+
+# Calculate zscore
+score = NULL
+for (i in 1:nrow(vals)) {
+  row=vals[i,]
+  zscore=(row-mean(row))/sd(row)
+  score =rbind(score,zscore)
+}
+
+row.names(score) = gene
+zscore=score
+
+# Generate heatmap
+mat = as.matrix(zscore)
+
+# Opent the drawing device.
+pdf("heatmap.pdf")
+
+colors = colorRampPalette(c("green","black","red"),space="rgb")(256)
+heatmap.2(mat,col=colors,density.info="none",trace="none", margins=c(7,7),lhei=c(1,5))
+dev.off()
+
+
+
 

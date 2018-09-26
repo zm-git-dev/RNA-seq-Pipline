@@ -1,6 +1,6 @@
 # Generalized RNA-seq pipeline for Gene Differential Expression Analysis and Gene-set Enrichment Analysis
 
-This simple RNA-seq pipeline was written by me, for self-study and exposure to NGS-data analysis. This piepleine will
+This simple RNA-seq pipeline was written by me, for self-study and exposure to NGS-data analysis. This pipeline will
 perform RNA-seq alignment for user specified read data, conduct coverage/abundance counts against a user specified
 gene feature structure, and format results for gene-set enrichment analysis. For this pipeline, I will try 
 to generalize the analysis for RNA-seq experiments as much as possible for the purpose of learning the complexities
@@ -36,8 +36,7 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reads/<br/>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refs/<br/>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rnaSeqPipeline.sh<br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script1.r<br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script2.r<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deseq.r<br/>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readME.md<br/>
 
 

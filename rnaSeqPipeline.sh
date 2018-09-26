@@ -81,13 +81,10 @@ featureCounts -a $GTF -g gene_name -o counts.txt  bam/H*.bam  bam/U*.bam 2>> $RU
 echo "*** Generating table that only includes counts."
 cat counts.txt | cut -f 1,7-12 > simple_counts.txt
 
-# Run DESeq2 method on the simple count file to generate results.
+# Run DESeq method on the simple count file to generate results, creates heatmap.
 echo "*** Running DESeq."
 #cat simple_counts.txt | Rscript deseq1.r 3x3 > results.txt  2>> $RUNLOG
-cat simple_counts.txt | Rscript deseq1.r $intx$int > results.txt  2>> $RUNLOG
-
-# Create a heatmap to visually show differentially expressed genes
-cat norm_matrix-deseq1.txt | Rscript heatmap.r > heatmap.pdf
+cat simple_counts.txt | Rscript deseq.r $intx$int > results.txt  2>> $RUNLOG
 
 # Filter results for significantly expressed genes (p=0.05 value) for gene enrichment 
 # studies
