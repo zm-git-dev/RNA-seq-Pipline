@@ -93,9 +93,11 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
 ## Results
    
    Table diagram of associated cell pathways/functions that had the most enriched genes based on ORA/GSR analysis from ErmineJ software.
-   ![alt text]()
+   ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/ErmineJsnap1.png?raw=true)
 
    Tree diagram of associated cell pathways/functions that had the most enriched genes based on ORA/GSR analysis from ErmineJ software. Proccesses in green are considered to be statistically relevant and enriched in this particular experiment.
+   ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/ErmineJsnap2.png?raw=true)
+   ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/ErmineJsnap3.png)
 
 ## Pipeline Diagram
 
