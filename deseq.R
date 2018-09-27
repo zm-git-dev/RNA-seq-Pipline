@@ -85,7 +85,7 @@ dt = data.frame("id"=rownames(nc), nc)
 keep = subset(dt, id %in% diffs$id)
 
 # Save into the normalize data matrix.
-write.table(keep, file="norm-matrix-deseq1.txt", sep="\t", row.name=FALSE, col.names=TRUE, quote=FALSE)
+write.table(keep, file="norm-matrix-deseq.txt", sep="\t", row.name=FALSE, col.names=TRUE, quote=FALSE)
 
 # This part of the script generates a heat map for differential expressession
 

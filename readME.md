@@ -28,9 +28,9 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
 ## Instructions for running this pipeline
 1. Clone this repo into where you want it to be on your desktop/laptop.
 
-2. Move into this directory and create to new folders called "reads" and "refs". You will place your read data into the 
-   reads folder, while your refs directory should contain the reference genome you want to align your RNA-seq data to, 
-   along with the GTF file for estimating gene feature abundance/counts. Like so:
+2. Move into this directory. You will place your read data into the reads folder, while your refs directory should 
+   contain the reference genome you want to align your RNA-seq data to, along with the GTF file for estimating gene 
+   feature abundance/counts. Like so:
 
    Main Folder/<br/>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reads/<br/>
@@ -69,22 +69,41 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
 
    ```
    The program should prompt you with questions about your data/experiment, in which you should answer on the
-   command line. This should provide you with your results in several text files that you can use for gene-set 
-   feature analysis.
+   command line. This should provide you with your results in several text files that you can use for gene-set feature analysis:
+
+   "https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz"
+
+   - counts.txt
+   - simple_counts.txt
+   - norm-matrix-deseq.txt
+   - results.txt
+   - geneScore.txt
+   - heatmap.pdf
 
 ## Gene-set enrichment analysis/functional analysis
    
-   Using the results generated from the shell script, we can now use ErmineJ to conduct over-representation analysis
-   on our list of differentially expressed genes.
+   Using the results generated from the shell script, we can now use ErmineJ to conduct Over-representation analysis and on our list of differentially expressed genes. ErmineJ software requires these main input files for Over-representation analysis and Gene Score Resampling:
+
+   Annotation file: For my tests, I used the [generic human](https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz) GO XML file from their website. ErmineJ provides users options to download annotation files for many organisms from their own [website](https://gemma.msl.ubc.ca/annots/). 
+
+   Gene score file: geneScore.txt
+
+   Expression data: norm-matrix-deseq.txt
+
+   In the ORA representation analysis, default parameters should be selected, with a gene score threshold of 0.05 and max/min gen set size set to 500 and 5 respectively. The negative log of gene scores option was selected for this analysis, since we used p-values in our gene score file. For the gene score resampling analysis, the same default parameters were chosen as well, with the best scoring replicate selection, and 100000 replicates chosen.
+
+## Results
+
 
 ## Pipeline Diagram
 
    ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/Slide1.jpg?raw=true "Pipeline Diagram")
 
 ## Future Directions
-- Add QC measures
-- Add single-end read functionality
-- Improve heatmap.R script
+   - Add QC measures
+   - Add single-end read functionality
+   - Improve heatmap.R script
+   - Add command line functionality of ErmineJ to shell script
 
 
 ## Contact Information

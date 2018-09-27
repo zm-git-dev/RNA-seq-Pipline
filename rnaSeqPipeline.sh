@@ -86,7 +86,6 @@ echo "*** Running DESeq."
 #cat simple_counts.txt | Rscript deseq1.r 3x3 > results.txt  2>> $RUNLOG
 cat simple_counts.txt | Rscript deseq.r $intx$int > results.txt  2>> $RUNLOG
 
-# Filter results for significantly expressed genes (p=0.05 value) for gene enrichment 
-# studies
-cat results.txt | awk '$8 < 0.05 { print $0 }' > differentiallyExpressedGenes.txt
+# Create geneScore file
+cat results.txt | cut -f 1,8 > geneScore.txt
 
