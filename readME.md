@@ -82,7 +82,7 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    
    Using the results generated from the shell script, we can now use ErmineJ to conduct Over-representation analysis and on our list of differentially expressed genes. ErmineJ software requires these main input files for Over-representation analysis and Gene Score Resampling:
 
-   Annotation file: For my tests, I used the [generic human](https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz) GO XML file from their website. ErmineJ provides users with the option to download annotation files for many organisms from their own [website](https://gemma.msl.ubc.ca/annots/). 
+   Annotation file: For my tests, I used the [generic human](https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz) GO XML file from ErmineJ. ErmineJ provides users with the option to download annotation files for many organisms from their own [website](https://gemma.msl.ubc.ca/annots/). 
 
    Gene score file: geneScore.txt
 
@@ -97,7 +97,7 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/ErmineJsnap1.png?raw=true)
 
    Tree diagram of associated cell pathways/functions that had the most enriched genes based on ORA/GSR analysis from ErmineJ software. Proccesses in green are considered to be statistically relevant and enriched in this particular experiment.
-   
+
    ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/ErmineJsnap2.png?raw=true)
    ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/ErmineJsnap3.png)
 
