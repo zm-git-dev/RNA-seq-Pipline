@@ -71,8 +71,6 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    The program should prompt you with questions about your data/experiment, in which you should answer on the
    command line. This should provide you with your results in several text files that you can use for gene-set feature analysis:
 
-   "https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz"
-
    - counts.txt
    - simple_counts.txt
    - norm-matrix-deseq.txt
@@ -84,16 +82,20 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    
    Using the results generated from the shell script, we can now use ErmineJ to conduct Over-representation analysis and on our list of differentially expressed genes. ErmineJ software requires these main input files for Over-representation analysis and Gene Score Resampling:
 
-   Annotation file: For my tests, I used the [generic human](https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz) GO XML file from their website. ErmineJ provides users options to download annotation files for many organisms from their own [website](https://gemma.msl.ubc.ca/annots/). 
+   Annotation file: For my tests, I used the [generic human](https://gemma.msl.ubc.ca/annots/Generic_human_noParents.an.txt.gz) GO XML file from their website. ErmineJ provides users with the option to download annotation files for many organisms from their own [website](https://gemma.msl.ubc.ca/annots/). 
 
    Gene score file: geneScore.txt
 
    Expression data: norm-matrix-deseq.txt
 
-   In the ORA representation analysis, default parameters should be selected, with a gene score threshold of 0.05 and max/min gen set size set to 500 and 5 respectively. The negative log of gene scores option was selected for this analysis, since we used p-values in our gene score file. For the gene score resampling analysis, the same default parameters were chosen as well, with the best scoring replicate selection, and 100000 replicates chosen.
+   In the ORA representation analysis, default parameters should be selected, with a gene score threshold of 0.05 and max/min gen set size set to 500 and 5 respectively. The best gene scoring option was also selected as default. The negative log of gene scores option was selected for this analysis, since we used p-values in our gene score file. For the gene score resampling analysis, the same default parameters were chosen as well, with the best scoring replicate selection, and 100000 replicates chosen.
 
 ## Results
+   
+   Table diagram of associated cell pathways/functions that had the most enriched genes based on ORA/GSR analysis from ErmineJ software.
+   ![alt text]()
 
+   Tree diagram of associated cell pathways/functions that had the most enriched genes based on ORA/GSR analysis from ErmineJ software. Proccesses in green are considered to be statistically relevant and enriched in this particular experiment.
 
 ## Pipeline Diagram
 

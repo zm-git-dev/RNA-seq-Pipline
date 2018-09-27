@@ -51,6 +51,7 @@ echo -n "Please provide the number of replicates used for each sample/condition 
 read int
 
 
+
 # Iterate over each sample and conduct alignment to reference genome/sequence, create index 
 # for BAM file results
 
@@ -84,7 +85,10 @@ cat counts.txt | cut -f 1,7-12 > simple_counts.txt
 # Run DESeq method on the simple count file to generate results, creates heatmap.
 echo "*** Running DESeq."
 #cat simple_counts.txt | Rscript deseq1.r 3x3 > results.txt  2>> $RUNLOG
-cat simple_counts.txt | Rscript deseq.r $intx$int > results.txt  2>> $RUNLOG
+replicateString=$int
+replicateString+="x"
+replicateString+=$int
+cat simple_counts.txt | Rscript deseq.r $replicateString > results.txt  2>> $RUNLOG
 
 # Create geneScore file
 cat results.txt | cut -f 1,8 > geneScore.txt
