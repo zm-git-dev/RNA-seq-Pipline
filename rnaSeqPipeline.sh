@@ -50,7 +50,18 @@ read
 echo -n "Please provide the number of replicates used for each sample/condition -> "
 read int
 
+# Run FastQC, for sequence quality visualization
 
+for SAMPLE in $REPLY;
+do
+    for ((i=1;i<=$int;i++));
+    do
+    	read1 = ${SAMPLE}_${i}_R1.fq
+	read2 = ${SAMPLE}_${i}_R2.fq
+	fastqc read1
+	fastqc read2
+    done
+done
 
 # Iterate over each sample and conduct alignment to reference genome/sequence, create index 
 # for BAM file results
