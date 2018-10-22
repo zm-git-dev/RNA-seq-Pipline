@@ -106,7 +106,6 @@ Note that **this pipeline is for paired-end reads**. I will add code for alignin
    ![alt text](https://github.com/wongak626/RNA-seq-Pipline/blob/master/readMEimages/Slide1.jpg?raw=true "Pipeline Diagram")
 
 ## Future Directions
-   - Add QC measures
    - Add single-end read functionality
    - Improve heatmap.R script
    - Add command line functionality of ErmineJ to shell script
